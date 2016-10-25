@@ -1,5 +1,10 @@
 <h1>Crear un producto</h1>
 <%= form_for(@producto) do |f|%>
+	<% @producto.errors.full_messages.each do |message| %>
+	<div>
+		<strong>* <%=message%> </strong>
+	</div>
+	<%end%>
 	<div class="">
 		<%= f.text_field  :referencia, placeholder: "Referencia"%>
 	</div>

@@ -18,7 +18,10 @@ class ProductosController < ApplicationController
 			color: params[:producto][:color],
 			devuelto: params[:producto][:false],
 			imagen: params[:producto][:imagen])
-		@producto.save
+		if @producto.save
 		redirect_to @producto
+		else
+			render :new
+		end
 	end
 end
