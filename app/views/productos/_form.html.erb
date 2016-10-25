@@ -1,0 +1,25 @@
+<%= form_for(@producto) do |f|%>
+	<% @producto.errors.full_messages.each do |message| %>
+	<div>
+		<strong>* <%=message%> </strong>
+	</div>
+	<%end%>
+	<div class="">
+		<%= f.text_field  :referencia, placeholder: "Referencia"%>
+	</div>
+	<div class="">
+		<%= f.text_area  :descripcion, placeholder: "Descripcion", style:"height:250px;"%>
+	</div>
+	<div class="">
+		<%= f.number_field  :precio, placeholder: "Precio"%>
+	</div>
+	<div class="">
+		<%= f.text_field  :color, placeholder: "Color"%>
+	</div>
+	<div class="">
+		<%= f.text_field  :imagen, placeholder: "Url Imagen"%>
+	</div>
+	<div class="">
+		<%= f.submit "Guardar" %>
+	</div>
+<%end%>

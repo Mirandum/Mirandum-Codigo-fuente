@@ -11,16 +11,20 @@
 		<div class="dress-name">
 				<h3><%=producto.referencia%></h3>
 				<span>$<%=producto.precio%></span>
-				<p><%=producto.descripcion%></p>
+			<a href="#">Comprar Ahora</a>
+		</di	<p><%=producto.descripcion%></p>
 			</div>
 		<div class="span span3">
 				<p class="left">COLOR</p>
 				<p class="right"><%=producto.color%></p>
 		</div>
 		<div class="purchase">
-			<a href="#">Comprar Ahora</a>
-		</div>
+			v>
 	</div>
+</div>
+
+<div>
+	<%= link_to "Eliminar", producto, method: :delete %>
 </div>
 
 <%end%>

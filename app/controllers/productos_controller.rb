@@ -24,4 +24,19 @@ class ProductosController < ApplicationController
 			render :new
 		end
 	end
+
+	def destroy
+		@producto = Producto.find(params[:id])
+		@producto.destroy
+		redirect_to articles_path
+	end
+
+	def edit
+		@producto = Producto.find(params[:id])	
+		if @producto.update(article_params)	 
+			redirect_to @producto
+		else
+			render :edit
+		end
+	end
 end
