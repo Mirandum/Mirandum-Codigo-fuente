@@ -1,0 +1,21 @@
+<h1>Crear un producto</h1>
+<%= form_for(@producto) do |f|%>
+	<div class="">
+		<%= f.text_field  :referencia, placeholder: "Referencia"%>
+	</div>
+	<div class="">
+		<%= f.text_area  :descripcion, placeholder: "Descripcion", style:"height:250px;"%>
+	</div>
+	<div class="">
+		<%= f.number_field  :precio, placeholder: "Precio"%>
+	</div>
+	<div class="">
+		<%= f.text_field  :color, placeholder: "Color"%>
+	</div>
+	<div class="">
+		<%= f.text_field  :imagen, placeholder: "Url Imagen"%>
+	</div>
+	<div class="">
+		<%= f.submit "Guardar" %>
+	</div>
+<%end%>

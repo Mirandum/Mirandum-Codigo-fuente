@@ -1,4 +1,26 @@
-<%  @articles.each do |article| %>
-
+<%  @articles.each do |producto| %>
+<div class="new-product">
+	<div class="col-md-5 zoom-grid">
+		<div class="flexslider">
+			<ul class="slides">
+			<%= image_tag producto.imagen%>
+			</ul>
+		</div>
+	</div>
+	<div class="col-md-7 dress-info">
+		<div class="dress-name">
+				<h3><%=producto.referencia%></h3>
+				<span>$<%=producto.precio%></span>
+				<p><%=producto.descripcion%></p>
+			</div>
+		<div class="span span3">
+				<p class="left">COLOR</p>
+				<p class="right"><%=producto.color%></p>
+		</div>
+		<div class="purchase">
+			<a href="#">Comprar Ahora</a>
+		</div>
+	</div>
+</div>
 
 <%end%>
