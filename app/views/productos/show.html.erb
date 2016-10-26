@@ -42,20 +42,10 @@
 						<a href="#">Comprar Ahora</a>
 						<%= link_to "Eliminar", @producto, method: :delete %>
 						<%= link_to "Editar", edit_producto_path(@producto) %>
+						<%= link_to "nuevo", new_producto_path %>
 						<div class="clearfix"></div>
 					</div>
-				<script src="js/imagezoom.js"></script>
-					<!-- FlexSlider -->
-					<script defer src="js/jquery.flexslider.js"></script>
-					<script>
-						// Can also be used with $(document).ready()
-						$(window).load(function() {
-						  $('.flexslider').flexslider({
-							animation: "slide",
-							controlNav: "thumbnails"
-						  });
-						});
-					</script>
+				
 				</div>
 				<div class="clearfix"></div>
 					<div class="reviews-tabs">
