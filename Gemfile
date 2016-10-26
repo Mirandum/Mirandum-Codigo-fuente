@@ -27,6 +27,8 @@ gem 'jbuilder', '~> 2.5'
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 
+#Gema para manejo de login
+gem 'devise'
 
 #Gema de coffee
 gem 'coffee-script-source', '1.8.0'

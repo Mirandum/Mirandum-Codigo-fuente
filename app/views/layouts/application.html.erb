@@ -10,13 +10,25 @@
 
   <body>
   	<!-- header-section-starts -->
+
 	<div class="header">
 		<div class="header-top-strip">
 			<div class="container">
 				<div class="header-top-left">
 					<ul>
-						<li><span class="glyphicon glyphicon-user"> </span>"Login"</li>
-						<li><a href="register.html"><span class="glyphicon glyphicon-lock"> </span>Crea una Cuenta<a></li>		
+						<% if user_signed_in? %>
+						<li>
+							<%= link_to "Cerrar sesión", destroy_user_session_path, method: :delete%>
+						</li>
+						<%else%>
+						<li>
+							<%= link_to "Iniciar sesión", new_user_session_path%>
+						</li>
+						<li>
+							<%= link_to "Crear cuenta", new_user_registration_path%>
+						</li>
+						<%end%>
+
 					</ul>
 				</div>
 				<div class="header-right">
@@ -127,6 +139,10 @@
 </div>
 </div>
 
+
+  	<h2 class="notice"><%=notice %></h2>
+  	<h2 class="alert"><%=alert%></h2>
+
 <!-- Contenido de la pagina -->
 
     <%= yield %>
@@ -180,8 +196,8 @@
 				<div class="col-md-3 span1_of_4">
 					<h4>Cuenta</h4>
 					<ul class="f_nav">
-						<li><a href="account.html">login</a></li>
-						<li><a href="register.html">crear una cuenta</a></li>
+						<li><a href="account.html">login1111</a></li>
+						
 						<li><a href="#">crear lista de deseos</a></li>
 						<li><a href="checkout.html">mi bolsa de compra</a></li>
 						
@@ -200,7 +216,7 @@
 						<li><a href="#">tendencias</a></li>
 						<li><a href="#">venta</a></li>
 						
-						<li><a href="#">login</a></li>
+						<li><a href="#">login222222</a></li>
 						
 					</ul>			
 				</div>
