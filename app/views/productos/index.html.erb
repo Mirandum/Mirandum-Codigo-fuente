@@ -1,30 +1,16 @@
-<%  @articles.each do |producto| %>
-<div class="new-product">
-	<div class="col-md-5 zoom-grid">
+<%@articles.each do |product| %>
+<div class="col-md-4 product simpleCart_shelfItem text-center">			
 		<div class="flexslider">
 			<ul class="slides">
-			<%= image_tag producto.imagen%>
+			<%= image_tag product.imagen%>
 			</ul>
 		</div>
-	</div>
-	<div class="col-md-7 dress-info">
-		<div class="dress-name">
-				<h3><%=producto.referencia%></h3>
-				<span>$<%=producto.precio%></span>
-			<a href="#">Comprar Ahora</a>
-		</di	<p><%=producto.descripcion%></p>
-			</div>
-		<div class="span span3">
-				<p class="left">COLOR</p>
-				<p class="right"><%=producto.color%></p>
+		<div class="mask">
+			<%= link_to "Vista Rápida", product %>
 		</div>
-		<div class="purchase">
-			v>
-	</div>
+		<div>
+			<p><a class="product_name" href="single.html"><%=product.referencia%></a></p>
+		</div>
+		<p><a class="item_add" href="#"><i></i> <span class="item_price">$<%=product.precio%></span></a></p>
 </div>
-
-<div>
-	<%= link_to "Eliminar", producto, method: :delete %>
-</div>
-
-<%end%>
+<%end%>	

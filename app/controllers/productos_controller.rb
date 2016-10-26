@@ -11,6 +11,10 @@ class ProductosController < ApplicationController
 		@producto = Producto.new
 	end
 
+	def edit
+		@producto = Producto.find(params[:id])
+	end
+
 	def create
 		@producto = Producto.new(referencia:  params[:producto][:referencia], 
 			descripcion: params[:producto][:descripcion],
@@ -28,12 +32,17 @@ class ProductosController < ApplicationController
 	def destroy
 		@producto = Producto.find(params[:id])
 		@producto.destroy
-		redirect_to articles_path
+		redirect_to productos_path
 	end
 
-	def edit
+	def update
 		@producto = Producto.find(params[:id])	
-		if @producto.update(article_params)	 
+		if @producto.update(referencia:  params[:producto][:referencia], 
+			descripcion: params[:producto][:descripcion],
+			precio: params[:producto][:precio],
+			color: params[:producto][:color],
+			devuelto: params[:producto][:false],
+			imagen: params[:producto][:imagen])	 
 			redirect_to @producto
 		else
 			render :edit
