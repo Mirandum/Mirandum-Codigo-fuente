@@ -12,6 +12,35 @@
 
 ActiveRecord::Schema.define(version: 20161026015610) do
 
+  create_table "compra_productos", force: :cascade do |t|
+    t.integer  "producto_id"
+    t.integer  "compra_id"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+    t.index ["compra_id"], name: "index_compra_productos_on_compra_id"
+    t.index ["producto_id"], name: "index_compra_productos_on_producto_id"
+  end
+
+  create_table "compras", force: :cascade do |t|
+    t.integer  "precioTotal"
+    t.date     "fechaSolicitada"
+    t.date     "fechaEntrega"
+    t.boolean  "pagada"
+    t.datetime "created_at",      null: false
+    t.datetime "updated_at",      null: false
+  end
+
+  create_table "consumidors", force: :cascade do |t|
+    t.string   "nombre"
+    t.string   "apellido"
+    t.string   "correoElectronico"
+    t.date     "fechaDeNacimiento"
+    t.integer  "cedula"
+    t.string   "contraseña"
+    t.datetime "created_at",        null: false
+    t.datetime "updated_at",        null: false
+  end
+
   create_table "productos", force: :cascade do |t|
     t.string   "referencia"
     t.string   "descripcion"
