@@ -1,6 +1,6 @@
 class ProductosController < ApplicationController
 	before_action :authenticate_user!, except: [:show, :index]
-	before_action :set_article, except:[:index, :new, :create]
+	before_action :set_producto, except:[:index, :new, :create]
 
 	def index
 		@articles = Producto.all
@@ -15,7 +15,6 @@ class ProductosController < ApplicationController
 	end
 
 	def edit
-		
 	end
 
 	def create
@@ -54,7 +53,7 @@ class ProductosController < ApplicationController
 
 	private
 
-	def set_article
+	def set_producto
 		@producto = Producto.find(params[:id])
 	end
 

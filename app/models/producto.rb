@@ -1,4 +1,6 @@
 class Producto < ApplicationRecord
+	has_many :comments
+	belongs_to :user
 	validates :referencia, presence: true, uniqueness: true
 	validates :descripcion, presence: true, length: {minimum: 20}
 	validates :precio, presence: true

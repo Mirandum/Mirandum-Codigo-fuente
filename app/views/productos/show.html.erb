@@ -96,14 +96,22 @@
 						<div class="clearfix"></div>
 					</div>
 				
+				<%= render "comments/form" %>
+				<h2>Comentarios </h2>
+					<ul>
+					<% @producto.comments.each do |comment| %>
+					<li>
+						<%= comment.body %> - <%= comment.user.email %> 
+					</li>
+
+				<%end%>
+				</ul>
 				</div>
 				<div class="clearfix"></div>
 					<div class="reviews-tabs">
       <!-- Main component for a primary marketing message or call to action -->
         			</div>
-
 			</div>
-			<div> <h2>Comentarios </h2>
-			<%= render "comments/form" %>
-			</div>
-			</div>
+			
+	
+</div>
