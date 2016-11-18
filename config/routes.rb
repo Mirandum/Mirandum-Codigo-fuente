@@ -1,8 +1,12 @@
 Rails.application.routes.draw do
+  
+	resources :productos do
+	  resources :comments
+	end
   devise_for :users
   get 'welcome/index'
 
-  resources :productos
+  
   root 'welcome#index'
 
 
