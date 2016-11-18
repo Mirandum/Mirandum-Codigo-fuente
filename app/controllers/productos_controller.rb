@@ -1,10 +1,13 @@
 class ProductosController < ApplicationController
+	before_action :authenticate_user!, except: [:show, :index]
+	before_action :set_article, except:[:index, :new, :create]
+
 	def index
 		@articles = Producto.all
 	end
 
 	def show
-		@producto = Producto.find(params[:id])
+
 	end
 
 	def new
@@ -12,7 +15,7 @@ class ProductosController < ApplicationController
 	end
 
 	def edit
-		@producto = Producto.find(params[:id])
+		
 	end
 
 	def create
@@ -30,13 +33,13 @@ class ProductosController < ApplicationController
 	end
 
 	def destroy
-		@producto = Producto.find(params[:id])
+
 		@producto.destroy
 		redirect_to productos_path
 	end
 
 	def update
-		@producto = Producto.find(params[:id])	
+	
 		if @producto.update(referencia:  params[:producto][:referencia], 
 			descripcion: params[:producto][:descripcion],
 			precio: params[:producto][:precio],
@@ -48,4 +51,11 @@ class ProductosController < ApplicationController
 			render :edit
 		end
 	end
+
+	private
+
+	def set_article
+		@producto = Producto.find(params[:id])
+	end
+
 end
