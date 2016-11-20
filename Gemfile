@@ -33,6 +33,11 @@ gem 'devise'
 #Gema de coffee
 gem 'coffee-script-source', '1.8.0'
 
+#busquedas
+
+gem 'ransack'
+gem 'paperclip'
+
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 

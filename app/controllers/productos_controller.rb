@@ -3,10 +3,12 @@ class ProductosController < ApplicationController
 	before_action :set_producto, except:[:index, :new, :create]
 
 	def index
-		@articles = Producto.all
+		@search = Producto.search(params[:q])
+		@articles = @search.result
 	end
 
 	def show
+		@producto= Producto.find(params[:id])
 		@comment = Comment.new
 	end
 
@@ -23,16 +25,19 @@ class ProductosController < ApplicationController
 			precio: params[:producto][:precio],
 			color: params[:producto][:color],
 			devuelto: params[:producto][:false],
-			imagen: params[:producto][:imagen])
+			tipo: params[:producto][:tipo],
+			cover: params[:producto][:cover])
+		
+
 		if @producto.save
-		redirect_to @producto
+			redirect_to @producto
 		else
 			render :new
 		end
 	end
 
 	def destroy
-
+		@producto= Producto.find(params[:id])
 		@producto.destroy
 		redirect_to productos_path
 	end
@@ -44,7 +49,9 @@ class ProductosController < ApplicationController
 			precio: params[:producto][:precio],
 			color: params[:producto][:color],
 			devuelto: params[:producto][:false],
-			imagen: params[:producto][:imagen])	 
+			 
+			tipo: params[:producto][:tipo],
+			cover: params[:producto][:cover] )	 
 			redirect_to @producto
 		else
 			render :edit

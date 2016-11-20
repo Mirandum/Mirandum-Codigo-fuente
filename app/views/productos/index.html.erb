@@ -1,16 +1,51 @@
-<%@articles.each do |product| %>
-<div class="col-md-4 product simpleCart_shelfItem text-center">			
-		<div class="flexslider">
-			<ul class="slides">
-			<%= image_tag product.imagen%>
-			</ul>
+<div class="container">
+	
+	<%= search_form_for @search do |f|%>
+		<!--filtro por referencia-->
+		<div class="field ">
+					
+			<%= f.label :tipo_cont, "Buscar por tipo"%>  
+			<%= f.text_field :tipo_cont %>
 		</div>
-		<div class="mask">
-			<%= link_to "Vista Rápida", product %>
+
+		<!--filtro por precio-->
+		<div class="field ">
+					
+			<%= f.label :precio_gteq, "Precio entre"%>  
+			<%= f.text_field :precio_gteq %>
+			<%= f.label :precio_lteq, "y"%>  <%= f.text_field :precio_lteq %>
+			
+			
 		</div>
-		<div>
-			<p><a class="product_name" href="single.html"><%=product.referencia%></a></p>
-		</div>
-		<p><a class="item_add" href="#"><i></i> <span class="item_price">$<%=product.precio%></span></a></p>
+
+		<div class="actions">
+			<%= f.submit "Buscar"%>
+		</div>		
+	<%end%>
+	
 </div>
+
+
+
+<div class="container">
+	<%@articles.each do |product| %>
+	<div class="col-md-4 product simpleCart_shelfItem text-center">			
+			<div class="flexslider">
+				<ul class="slides">
+				<%= image_tag product.cover.url()%>
+				</ul>
+			</div>
+			<div class="mask">
+				<%= link_to "Vista Rápida", product %>
+			</div>
+			<div>
+				<p><a class="product_name" href="single.html"><%=product.referencia%></a></p>
+			</div>
+			<p><a class="item_add" href="#"><i></i> <span class="item_price">$<%=product.precio%></span></a></p>
+	</div>
+
 <%end%>	
+</div>
+<br>
+
+<script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>

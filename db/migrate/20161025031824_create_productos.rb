@@ -6,8 +6,8 @@ class CreateProductos < ActiveRecord::Migration[5.0]
       t.integer :precio
       t.string :color
       t.boolean :devuelto
-      t.string :imagen
-
+      
+      t.string :tipo
       t.timestamps
     end
   end

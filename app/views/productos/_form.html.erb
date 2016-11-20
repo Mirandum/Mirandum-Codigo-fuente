@@ -17,8 +17,11 @@
 		<div class="">
 			<%= f.text_field  :color, placeholder: "Color"%>
 		</div>
+		<div class="field">
+			Imagen <%= f.file_field :cover%>
+		</div>
 		<div class="">
-			<%= f.text_field  :imagen, placeholder: "Url Imagen"%>
+			<%= f.text_field  :tipo, placeholder: "Tipo"%>
 		</div>
 		<div class="">
 			<%= f.submit "Guardar" %>
