@@ -1,0 +1,43 @@
+<div class="container" align="center">
+    <%= form_for(personalizacion) do |f| %>
+      <% if personalizacion.errors.any? %>
+        <div id="error_explanation">
+          <h2><%= pluralize(personalizacion.errors.count, "error") %> prohibited this personalizacion from being saved:</h2>
+
+          <ul>
+          <% personalizacion.errors.full_messages.each do |message| %>
+            <li><%= message %></li>
+          <% end %>
+          </ul>
+        </div>
+      <% end %>
+
+      <div>
+        <%= image_tag "gafas6.png", :width=>"400", :height=>"350"%>
+      </div>
+      <div class="field">
+        <%= f.label :fechaSolicitada, "Fecha de Solicitud" %>
+        <%= f.datetime_select :fechaSolicitada %>
+      </div>
+
+      <div class="field">
+        <%= f.label :descripcion, "Descripcion" %>
+        <%= f.text_area :descripcion %>
+      </div>
+
+      <div class="field">
+        <%= f.label :color , "Color"%>
+        <%= f.color_field :color %>
+      </div>
+
+      <div class="field">
+        <%= f.label :cover , "Imagen"%>
+        <%= f.file_field :cover %>
+      </div>
+
+
+      <div class="actions">
+        <%= f.submit %>
+      </div>
+    <% end %>
+</div>

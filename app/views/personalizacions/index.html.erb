@@ -1,0 +1,35 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Personalizaciones</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Fecha Solicitada</th>
+      <th>Descripcion</th>
+      <th>Color</th>
+      <th>Cover</th>
+      <th>User</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @personalizacions.each do |personalizacion| %>
+      <tr>
+        <td><%= personalizacion.fechaSolicitada %></td>
+        <td><%= personalizacion.descripcion %></td>
+        <td><%= personalizacion.color %></td>
+        <td><%= personalizacion.cover %></td>
+        <td><%= personalizacion.user.email %></td>
+        <td><%= link_to 'Show', personalizacion %></td>
+        <td><%= link_to 'Edit', edit_personalizacion_path(personalizacion) %></td>
+        <td><%= link_to 'Destroy', personalizacion, method: :delete, data: { confirm: 'Estas seguro?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Personalizacion', new_personalizacion_path %>

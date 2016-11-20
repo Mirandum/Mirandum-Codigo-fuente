@@ -1,8 +1,12 @@
 Rails.application.routes.draw do
   
+  resources :personalizacions
+  resources :compras
+
 	resources :productos do
 	  resources :comments
 	end
+  
   devise_for :users
   
   get 'welcome/index'

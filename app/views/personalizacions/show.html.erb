@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Fecha Solicitud:</strong>
+  <%= @personalizacion.fechaSolicitada %>
+</p>
+
+<p>
+  <strong>Descripcion:</strong>
+  <%= @personalizacion.descripcion %>
+</p>
+
+<p>
+  <strong>Color:</strong>
+  <%= @personalizacion.color %>
+</p>
+
+<p>
+  <strong>Imagen:</strong>
+  <%= @personalizacion.cover %>
+</p>
+
+<p>
+  <strong>Usuario:</strong>
+  <%= @personalizacion.user.email%>
+</p>
+
+<%= link_to 'Edit', edit_personalizacion_path(@personalizacion) %> |
+<%= link_to 'Back', personalizacions_path %>

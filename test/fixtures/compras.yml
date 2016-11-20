@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  fechaSolicitada: 2016-11-20 01:57:26
+  pagada: false
+  precioTotal: 1
+
+two:
+  fechaSolicitada: 2016-11-20 01:57:26
+  pagada: false
+  precioTotal: 1

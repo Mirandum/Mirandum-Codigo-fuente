@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  fechaSolicitada: 2016-11-20 02:22:45
+  descripcion: MyString
+  color: MyString
+  cover: 
+  user: one
+
+two:
+  fechaSolicitada: 2016-11-20 02:22:45
+  descripcion: MyString
+  color: MyString
+  cover: 
+  user: two

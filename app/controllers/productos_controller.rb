@@ -1,6 +1,7 @@
 class ProductosController < ApplicationController
-	before_action :authenticate_user!, except: [:show, :index]
+	before_action :authenticate_user!, only: [:show, :index]
 	before_action :set_producto, except:[:index, :new, :create]
+	before_action :authenticate_admin!, only: [:destroy, :edit, :create, :new]
 
 	def index
 		@search = Producto.search(params[:q])

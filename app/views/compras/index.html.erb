@@ -1,0 +1,40 @@
+<p id="notice"><%= notice %></p>
+<div class="container">
+  <h1 align="center"> Mis Compras</h1>
+
+
+  <div class="table-reponsive">
+
+    <!--la clase table lo que hace es que me organiza los datos al 100% del screen y la clase table striped alterna los colores de la tabla- , la clase hover sirve para cuando pasas el mouse por encime cambia de color , para ahorrar espacio en la tabla usamos la clase table-condensed-->
+        <table class="table table-striped table-bordered table-hover table-condensed">
+      
+  <!--la clase active nos activa por defecto la fila o la celda asi para la mayoria, la clase success e info y warning danger,para cambiarle los colores  -->
+          <tr class="success">
+            <th>Fecha Solicitada</th>
+            <th>Pagada</th>
+            <th>Precio Total</th>
+            <th colspan="3"></th>     
+          </tr>
+
+           <tbody>
+            <% @compras.each do |compra| %>
+              <tr>
+                <td><%= compra.fechaSolicitada %></td>
+                <td><%= compra.pagada %></td>
+                <td><%= compra.precioTotal %></td>
+                <td><%= link_to 'Mostrar', compra %></td>
+                <td><%= link_to "Eliminar", compra, method: :delete %></td>
+                <td><%= link_to "Editar", edit_compra_path(compra) %></td>
+                
+              </tr>
+            <% end %>
+          </tbody>
+      
+      
+        </table>
+      </div>
+    </div>
+</div>
+  <br>
+
+

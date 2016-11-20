@@ -1,0 +1,10 @@
+class CreateHasProductos < ActiveRecord::Migration[5.0]
+  def change
+    create_table :has_productos do |t|
+      t.references :compra, foreign_key: true
+      t.references :producto, foreign_key: true
+
+      t.timestamps
+    end
+  end
+end

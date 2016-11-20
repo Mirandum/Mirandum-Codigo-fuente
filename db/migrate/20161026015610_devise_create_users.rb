@@ -34,9 +34,9 @@ class DeviseCreateUsers < ActiveRecord::Migration[5.0]
       t.string :apellido
       t.string :int
       t.string :date
-      t.string
+      
 
-      t.string :permission_level
+      t.integer :permission_level, default: 1
 
       t.timestamps null: false
     end
