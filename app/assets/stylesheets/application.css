@@ -13,3 +13,74 @@
  *= require_tree .
  *= require_self
  */
+
+h1{
+
+}
+
+.texto_resaltado{
+	font-size: 30px;
+	font-weight: bold;
+
+}
+.boton_largo{
+	height: 28pt;
+	width: 122pt;
+	  background: #816263;
+	  font-size: 17pt;
+	  color: black;
+}
+
+.boton_largo:hover{
+	transform: scale(1.4);
+}
+
+.input_text1{
+	width: 48%;
+    color: black;
+    letter-spacing: 1px;
+    font-weight: 300;
+    font-size: 15px;
+    padding: 10px 10px;
+    border: 1px solid #E4E4E4;
+    outline: none;
+    font-family: 'Lato-Regular';
+    text-align: left;
+}
+.input_text2{
+	width: 89%;
+    color: black;
+    letter-spacing: 1px;
+    font-weight: 300;
+    font-size: 15px;
+    padding: 10px 10px;
+    border: 1px solid #E4E4E4;
+    outline: none;
+    font-family: 'Lato-Regular';
+    text-align: left;
+}
+
+.input_text3{
+	width: 250pt;
+    color: black;
+    letter-spacing: 1px;
+    font-weight: 300;
+    font-size: 15px;
+    padding: 10px 10px;
+    border: 1px solid #E4E4E4;
+    outline: none;
+    font-family: 'Lato-Regular';
+    text-align: left;
+}
+
+.input_text1:hover{
+	transform: scale(1.4);
+}
+
+.zoom:hover{
+	transform: scale(1.4);
+}
+
+.zoom1:hover{
+	transform: scale(1.1);
+}

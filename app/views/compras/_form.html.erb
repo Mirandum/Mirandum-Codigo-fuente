@@ -3,25 +3,33 @@
     <div id="error_explanation">
       <h2><%= pluralize(compra.errors.count, "error") %> prohibited this compra from being saved:</h2>
 
+<div class="row">
+  <div class="col-md-3">
+  </div>
+  <div class="col-md-6">
       <ul>
       <% compra.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
+      <li><%= message %></li>
       <% end %>
       </ul>
-    </div>
-  <% end %>
+      <% end %>
 
-  <div class="field">
-    <%= f.label :fechaSolicitada %>
-    <%= f.datetime_select :fechaSolicitada %>
+      <div class="field">
+      <%= f.label :fechaSolicitada %>
+      <%= f.datetime_select :fechaSolicitada %>
+      </div>
+
+      <div class="field">
+      <%= f.hidden_field :precioTotal, :value => @total%>
+      </div>
+
+
+      <div class="actions">
+      <%= f.submit  "Comprar"%>
+      </div>
   </div>
-
-    <div class="field">
-    <%= f.hidden_field :precioTotal, :value => @total%>
+  <div class="col-md-3">
   </div>
-
-
-  <div class="actions">
-    <%= f.submit  "Comprar"%>
-  </div>
+</div>
+      
 <% end %>

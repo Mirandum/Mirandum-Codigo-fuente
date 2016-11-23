@@ -3,24 +3,38 @@
 	<%= search_form_for @search do |f|%>
 		<!--filtro por referencia-->
 		<div class="field ">
-					
-			<%= f.label :tipo_cont, "Buscar por tipo"%>  
-			<%= f.text_field :tipo_cont %>
+				
+		<div class="row">
+			<div class="col-md-3">	
+
+			<%= f.label :tipo_cont, "Buscar por tipo", :class=> 'texto_resaltado '%>  
+			</div>
+			<div class="col-md-4">	
+			<%= f.text_field :tipo_cont, :class => "input_text1" %>
+		
+			</div>
 		</div>
 
+		<br>
 		<!--filtro por precio-->
 		<div class="field ">
-					
-			<div style="float:left;"><%= f.label :precio_gteq, "Precio entre"%> </div>
-			<div style="float:left;"><%= f.text_field :precio_gteq %></div>
+		<div class="row">
+			<div class="col-md-2">				
+			<div style="float:left; font-size: 20pt;"><%= f.label :precio_gteq, "Precio entre"%> </div>
+		</div>
+		<div class="col-md-5">			
+			<div style="float:left;"><%= f.text_field :precio_gteq, :class => "input_text1"  %></div>
 			<div style="float: left;"><%= f.label :precio_lteq, "y"%>  </div>
-			<div style="float: left;"><%= f.text_field :precio_lteq %></div>
-			
+			<div style="float: left;"><%= f.text_field :precio_lteq, :class => "input_text1"  %></div>
+		</div>
+		
+		<div class="col-md-4">
+		<div class="actions">
+			<%= f.submit "Buscar", :class=> 'btn boton_largo'%>
+		</div>	
 		</div>
 
-		<div class="actions">
-			<%= f.submit "Buscar"%>
-		</div>		
+		</div>	
 	<%end%>
 	
 </div>
@@ -32,7 +46,7 @@
 	<div class="col-md-4 product simpleCart_shelfItem text-center">			
 			<div class="flexslider">
 				<ul class="slides">
-				<%= image_tag product.cover.url()%>
+				<%= image_tag product.cover.url() , :class => "zoom"%>
 				</ul>
 			</div>
 			<div class="mask">

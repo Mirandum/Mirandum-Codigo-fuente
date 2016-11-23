@@ -1,19 +1,27 @@
 <p id="notice"><%= notice %></p>
+<div class="row">
+		<div class="col-md-3">
+		</div>
+		<div class="col-md-6">
+			<p>
+			  <strong>Fechasolicitada:</strong>
+			  <%= @compra.fechaSolicitada %>
+			</p>
 
-<p>
-  <strong>Fechasolicitada:</strong>
-  <%= @compra.fechaSolicitada %>
-</p>
+			<p>
+			  <strong>Pagada:</strong>
+			  <%= @compra.pagada %>
+			</p>
 
-<p>
-  <strong>Pagada:</strong>
-  <%= @compra.pagada %>
-</p>
+			<p>
+			  <strong>Preciototal:</strong>
+			  <%= @compra.precioTotal %>
+			</p>
 
-<p>
-  <strong>Preciototal:</strong>
-  <%= @compra.precioTotal %>
-</p>
+			<%= link_to 'Edit', edit_compra_path(@compra) %> |
+			<%= link_to 'Back', compras_path %>
+		</div>
 
-<%= link_to 'Edit', edit_compra_path(@compra) %> |
-<%= link_to 'Back', compras_path %>
+		<div class="col-md-3">
+		</div>
+</div>

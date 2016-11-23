@@ -27,6 +27,15 @@ ActiveRecord::Schema.define(version: 20161121201102) do
     t.index ["user_id"], name: "index_comments_on_user_id"
   end
 
+  create_table "compra_productos", force: :cascade do |t|
+    t.integer  "producto_id"
+    t.integer  "compra_id"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+    t.index ["compra_id"], name: "index_compra_productos_on_compra_id"
+    t.index ["producto_id"], name: "index_compra_productos_on_producto_id"
+  end
+
   create_table "compras", force: :cascade do |t|
     t.datetime "fechaSolicitada"
     t.boolean  "pagada"
@@ -35,6 +44,17 @@ ActiveRecord::Schema.define(version: 20161121201102) do
     t.datetime "created_at",      null: false
     t.datetime "updated_at",      null: false
     t.index ["user_id"], name: "index_compras_on_user_id"
+  end
+
+  create_table "consumidors", force: :cascade do |t|
+    t.string   "nombre"
+    t.string   "apellido"
+    t.string   "correoElectronico"
+    t.date     "fechaDeNacimiento"
+    t.integer  "cedula"
+    t.string   "contraseña"
+    t.datetime "created_at",        null: false
+    t.datetime "updated_at",        null: false
   end
 
   create_table "has_productos", force: :cascade do |t|
