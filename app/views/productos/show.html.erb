@@ -89,7 +89,7 @@
 						<div class="clearfix"></div>
 					</div>
 					<div class="purchase">
-						<a href="#">Comprar Ahora</a>
+						<p><a href="/cart/<%= @producto.id %>">Adicionar al carrito</a></p>
 						<%= link_to "Eliminar", @producto, method: :delete %>
 						<%= link_to "Editar", edit_producto_path(@producto) %>
 						<%= link_to "nuevo", new_producto_path %>

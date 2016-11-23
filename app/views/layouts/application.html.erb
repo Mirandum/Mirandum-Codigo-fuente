@@ -19,9 +19,17 @@
 						<li>
 							<%= link_to "Cerrar sesión", destroy_user_session_path, method: :delete%>
 						</li>
+						<% if current_user.is_normal_user? %>
 						<li>
 							<%= link_to "Mis Compras", compras_path %>
 						</li>
+						<%end%>
+						<% if current_user.is_admin? %>
+						<li>
+							<%= link_to "Personalizaciones", personalizacions_path %>
+						</li>
+						<%end%>
+						
 						<%else%>
 						<li>
 							<%= link_to "Iniciar sesión", new_user_session_path%>

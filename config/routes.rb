@@ -2,10 +2,13 @@ Rails.application.routes.draw do
   
   resources :personalizacions
   resources :compras
-
-	resources :productos do
-	  resources :comments
-	end
+  #peticiones HTTP carrito
+  get '/cart' => 'cart#index'
+  get '/cart/clear' => 'cart#clearCart'
+  get '/cart/:id' => 'cart#add'
+  resources :productos do
+     resources :comments
+  end
   
   devise_for :users
   

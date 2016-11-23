@@ -16,17 +16,12 @@
     <%= f.datetime_select :fechaSolicitada %>
   </div>
 
-  <div class="field">
-    <%= f.label :pagada %>
-    <%= f.check_box :pagada %>
+    <div class="field">
+    <%= f.hidden_field :precioTotal, :value => @total%>
   </div>
 
-  <div class="field">
-    <%= f.label :precioTotal %>
-    <%= f.number_field :precioTotal %>
-  </div>
 
   <div class="actions">
-    <%= f.submit %>
+    <%= f.submit  "Comprar"%>
   </div>
 <% end %>

@@ -1,0 +1,28 @@
+<h1>Tu Carrito</h1>
+<% if @cart.empty? %>
+	<p>Tu carrito esta vacio</p>
+<%else%>
+<%= link_to "Vaciar Carrito", cart_clear_path%>
+<% end %>
+<%@total =0%>
+<ul>
+<% @cart.each do |id, cantidad| %>
+	
+	<% producto = Producto.find_by_id( id) %>
+	
+		<li>
+			<%= link_to producto.referencia , producto%>
+			<%= number_to_currency(producto.precio, :unit => '$')%>
+			<p>Cantidad: <%=cantidad%></p>
+		</li>
+		<% @total += cantidad*producto.precio %>
+		
+<%end%>
+<% if @cart.empty? %>
+<%else%>	
+	<p><b><%= number_to_currency(@total, :unit => '$')%></b></p>
+	
+
+	<%= render "compras/form", compra: Compra.new %>
+<%end%>
+</ul>

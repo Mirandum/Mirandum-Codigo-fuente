@@ -1,35 +1,44 @@
 <p id="notice"><%= notice %></p>
 
-<h1>Personalizaciones</h1>
 
-<table>
-  <thead>
-    <tr>
-      <th>Fecha Solicitada</th>
-      <th>Descripcion</th>
-      <th>Color</th>
-      <th>Cover</th>
-      <th>User</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
 
-  <tbody>
-    <% @personalizacions.each do |personalizacion| %>
-      <tr>
-        <td><%= personalizacion.fechaSolicitada %></td>
-        <td><%= personalizacion.descripcion %></td>
-        <td><%= personalizacion.color %></td>
-        <td><%= personalizacion.cover %></td>
-        <td><%= personalizacion.user.email %></td>
-        <td><%= link_to 'Show', personalizacion %></td>
-        <td><%= link_to 'Edit', edit_personalizacion_path(personalizacion) %></td>
-        <td><%= link_to 'Destroy', personalizacion, method: :delete, data: { confirm: 'Estas seguro?' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
+<div class="container">
+  <h1 align="center">Personalizaciones</h1>  
 
+
+  <div class="table-reponsive">
+
+    <!--la clase table lo que hace es que me organiza los datos al 100% del screen y la clase table striped alterna los colores de la tabla- , la clase hover sirve para cuando pasas el mouse por encime cambia de color , para ahorrar espacio en la tabla usamos la clase table-condensed-->
+        <table class="table table-striped table-bordered table-hover table-condensed">
+      
+  <!--la clase active nos activa por defecto la fila o la celda asi para la mayoria, la clase success e info y warning danger,para cambiarle los colores  -->
+          <tr class="success">
+            <th>Fecha Solicitada</th>
+            <th>Descripcion</th>
+            <th>Color</th>
+            <th>User</th>
+            <th colspan="4"></th>     
+          </tr>
+
+             <tbody>
+                <% @personalizacions.each do |personalizacion| %>
+                  <tr>
+                    <td><%= personalizacion.fechaSolicitada %></td>
+                    <td><%= personalizacion.descripcion %></td>
+                    <td><%= personalizacion.color %></td>
+                    <td><%= personalizacion.cover %></td>
+                    <td><%= personalizacion.user.email %></td>
+                    <td><%= link_to 'Mostrar', personalizacion %></td>
+                    <td><%= link_to 'Editar', edit_personalizacion_path(personalizacion) %></td>
+                    <td><%= link_to 'Eliminar', personalizacion, method: :delete, data: { confirm: 'Estas seguro?' } %></td>
+                  </tr>
+                <% end %>
+              </tbody>
+
+      
+        </table>
+      </div>
+    </div>
 <br>
 
 <%= link_to 'New Personalizacion', new_personalizacion_path %>
